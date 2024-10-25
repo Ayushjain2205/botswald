@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "Botswald",
+  "description": "This extension will show the content of botsies.vercel.app in new tabs",
+  "version": "1.0",
+  "permissions": ["tabs"],
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  }
+}

@@ -1,0 +1,26 @@
+.main {
+  --s: 310px; /* size of a hexagon */
+  --m: 20px; /* space between each heaxgon */
+  --r: calc(var(--s) * 3 * 1.1547 / 2 + 4 * var(--m));
+  display: flex;
+  margin-top: 0 !important;
+}
+.container div {
+  background-color: white;
+  width: var(--s);
+  height: calc(var(--s) * 1.1547);
+  margin: var(--m);
+  display: inline-block;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+}
+.container::before {
+  content: '';
+  width: calc(var(--s) / 2 + var(--m));
+  float: left;
+  height: 100%;
+  shape-outside: repeating-linear-gradient(
+    transparent 0 calc(var(--r) - 3px),
+    #fff 0 var(--r)
+  );
+}
